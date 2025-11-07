@@ -36,15 +36,15 @@ jobs:
       run: echo "Building version ${{ steps.get_version.outputs.VERSION }}"
     
     - name: Restore dependencies
-      run: dotnet restore Cirreum.Storage.Storage.slnx
+      run: dotnet restore Cirreum.Storage.Browser.slnx
       working-directory: ./src
     
     - name: Build
-      run: dotnet build Cirreum.Storage.Storage.slnx --configuration Release --no-restore -p:Version=${{ steps.get_version.outputs.VERSION }}
+      run: dotnet build Cirreum.Storage.Browser.slnx --configuration Release --no-restore -p:Version=${{ steps.get_version.outputs.VERSION }}
       working-directory: ./src
     
     - name: Pack
-      run: dotnet pack Cirreum.Storage.Storage.slnx --configuration Release --no-build -p:Version=${{ steps.get_version.outputs.VERSION }} -p:PackageVersion=${{ steps.get_version.outputs.VERSION }} --output ../artifacts
+      run: dotnet pack Cirreum.Storage.Browser.slnx --configuration Release --no-build -p:Version=${{ steps.get_version.outputs.VERSION }} -p:PackageVersion=${{ steps.get_version.outputs.VERSION }} --output ../artifacts
       working-directory: ./src
     
     - name: NuGet login (OIDC -> temp API key)
