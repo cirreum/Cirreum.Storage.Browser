@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<RootNamespace>Cirreum.Storage</RootNamespace>
+		<Description>Browser based storage.</Description>
+		<PackageTags>cirreum,browser,storage,client</PackageTags>
+	</PropertyGroup>
+
+</Project>
